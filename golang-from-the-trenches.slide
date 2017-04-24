@@ -1,0 +1,46 @@
+Go from the trenches
+"My First Go Microservice Platform"
+24 Apr 2017
+Tags: go, golang, infinityworks
+
+Ed Marshall - Thomas Gray
+
+ed.marshall@infinityworks.com
+
+thomas.gray@infinityworks.com
+
+@rucknar
+
+@topicus
+
+https://infinityworks.com
+
+View this presentation at http://github.com/flock3/golang-from-our-trench
+
+* Our Previous Experience
+- Talk about Ed's writing lots of prometheus metric exporters
+- Talk about Ed coming from an ops background
+- Talk about Tom coming from a dev background, but being completely new to golang
+
+* The Project
+- Overview of what we worked with the client to do 
+
+* Our Delivery
+- What we ended up delivering to the client, and how it was structured
+
+* Our decisions
+- Why we decided on the micro service design
+
+* Our Toolkit
+- Talk about gorm the ORM
+- Talk about go-common library
+- Talk about docker cloud
+- Talk about docker cloud running integration tests
+
+* Our Problems
+- Vendoring became a nightmare cross repo
+- Why our solution of using exposed structures might become a nightmare
+- Why we chose that solution
+- Why we should/shoulnt'd have done microservices
+
+* 
