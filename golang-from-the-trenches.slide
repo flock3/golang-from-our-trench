@@ -21,6 +21,7 @@ Who Am I?
 - Web interface
 - API Led design for automated consumption
 - Requirement for at least _some_ PHP
+- Hands off management, we cant touch it
 
 * Why did we choose Golang?
 - We were given freedom
@@ -99,6 +100,11 @@ A quick walk through of each microservice and it's job
 - We don't need an ORM
 - Tightly coupled micro services is madness
 - Not be idiots when it comes to Vendoring
+
+* Scenario fit
+- Golang gave us a deeper certainty
+- Shared structs gave us fast consistency
+- Go validate gave us almost for-free validation
 
 * Summary
 - Golang is awesome
