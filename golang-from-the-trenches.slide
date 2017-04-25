@@ -10,33 +10,97 @@ thomas.gray@infinityworks.com
 View this presentation at https://github.com/flock3/golang-from-our-trench
 
 * Our Previous Experience
-- Talk about Ed's writing lots of prometheus metric exporters
-- Talk about Ed coming from an ops background
-- Talk about Tom coming from a dev background, but being completely new to golang
+Who Am I?
+- InfinityWorks Consultant
+- Developer for 10 years
+- New to Golang!
 
 * The Project
-- Overview of what we worked with the client to do 
+- Delivery of a minimum viable product for the client
+- Automated deployment of monitoring across their infrastructure (both physical and cloud)
+- Web interface
+- API Led design for automated consumption
+- Requirement for at least _some_ PHP
 
-* Our Delivery
-- What we ended up delivering to the client, and how it was structured
+* Why did we choose Golang?
+- We were given freedom
+- We needed to iterate exceptionally quickly
+- I really wanted to learn Go
+- Our team already had some go knowledge
 
-* Our decisions
-- Why we decided on the micro service design
+* What we ended up delivering
+- 5 Microservices to handle different aspects
+    Database
+    Translation
+    Ansible
+    Blueprints
+    Control engine
+- A PHP based portal using laravel framework (_shudders_)
+- A ton of super-awesome golang tools
 
-* Our Toolkit
-- Talk about gorm the ORM
-- Talk about go-common library
-- Talk about docker cloud
-- Talk about docker cloud running integration tests
 
-* Our Problems
-- Vendoring became a nightmare cross repo
-- Why our solution of using exposed structures might become a nightmare
-- Why we chose that solution
+* Microservices
+- Why did we go for Microservices?
+- That's the way good software is written right?
+- More scope for extension
+- Ansible requires InfoSec approval, they can leverage it elsewhere
+- Easier for our small team to work on fully seperated components without conflict
+
+* How big are our "microservices"
+- Pretty small
+- One logical function per service
+- Database
+- Ansible
+- Portal
+
+* Microservice comms
+- How did we manage the services talking to eachother
+- Exported structures are great!
+- Exported structures suck..
+
+
+* Micro service breakdown
+A quick walk through of each microservice and it's job
+
+* Database
+- HTTP wrapper around a Postgres Database
+- GORM the ORM
+
+* Database - GORM
+- Gorm is brilliant
+- You proably don't need GORM
+- Go is a nice language for an ORM (quiet Adrian)
+
+* Blueprints
+- Writing files is crazy verbose
+- Reading data is crazy verbose
+- Calling out to GIT was quite painless
+- Apart from handling exit codes
+
+* Ansible
+- Commands are not too bad
+- Easily represent ansible output in a Go Struct
+
+* Integration environment & build
+- Docker Cloud for integration
+- Automated docker builds
+- Automated integration testing
+- Automated load testing 
+
+* Things that really hurt us
+- Vendoring 
+- What is Vendoring
+- Why did we need to vendor
+- Why was it a _nightmare_
+- Why did we choose shared structures?
 - Why we should/shoulnt'd have done microservices
 
 * What we might do differently
-- Possibly not use Gorm the ORM
-- Not create such tight coupling between microservices
+- We don't need an ORM
+- Tightly coupled micro services is madness
 - Not be idiots when it comes to Vendoring
-- Probably not do a micro service design
+
+* Summary
+- Golang is awesome
+- Golang is not fully defined (think vendoring)
+- Golang was a great fit for us
