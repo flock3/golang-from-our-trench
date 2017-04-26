@@ -9,11 +9,20 @@ thomas.gray@infinityworks.com
 
 View this presentation at https://github.com/flock3/golang-from-our-trench
 
+
 * Our Previous Experience
 Who Am I?
 - InfinityWorks Consultant
 - Developer for 10 years
 - New to Golang!
+
+* What this talk is
+- Overview of the project we completed
+- Overview of how Go helped us deliver it
+
+
+* World Building
+- What does the project do
 
 * The Project
 - Delivery of a minimum viable product for the client
@@ -22,6 +31,7 @@ Who Am I?
 - API Led design for automated consumption
 - Requirement for at least _some_ PHP
 - Hands off management, we cant touch it
+
 
 * Why did we choose Golang?
 - We were given freedom
@@ -34,7 +44,7 @@ Who Am I?
     Database
     Translation
     Ansible
-    Blueprints
+    Templates
     Control engine
 - A PHP based portal using laravel framework (_shudders_)
 - A ton of super-awesome golang tools
@@ -46,19 +56,8 @@ Who Am I?
 - More scope for extension
 - Ansible requires InfoSec approval, they can leverage it elsewhere
 - Easier for our small team to work on fully seperated components without conflict
-
-* How big are our "microservices"
-- Pretty small
-- One logical function per service
-- Database
-- Ansible
-- Portal
-
-* Microservice comms
-- How did we manage the services talking to eachother
-- Exported structures are great!
-- Exported structures suck..
-
+- Each Microservice is one logical function
+- REST & JSON
 
 * Micro service breakdown
 A quick walk through of each microservice and it's job
@@ -66,13 +65,11 @@ A quick walk through of each microservice and it's job
 * Database
 - HTTP wrapper around a Postgres Database
 - GORM the ORM
-
-* Database - GORM
 - Gorm is brilliant
 - You proably don't need GORM
-- Go is a nice language for an ORM (quiet Adrian)
+- Go is a nice language for an ORM
 
-* Blueprints
+* Templates
 - Writing files is crazy verbose
 - Reading data is crazy verbose
 - Calling out to GIT was quite painless
@@ -90,9 +87,9 @@ A quick walk through of each microservice and it's job
 
 * Things that really hurt us
 - Vendoring 
-- What is Vendoring
-- Why did we need to vendor
-- Why was it a _nightmare_
+-   What is Vendoring
+-   Why did we need to vendor
+-   Why was it a _nightmare_
 - Why did we choose shared structures?
 - Why we should/shoulnt'd have done microservices
 
@@ -105,8 +102,12 @@ A quick walk through of each microservice and it's job
 - Golang gave us a deeper certainty
 - Shared structs gave us fast consistency
 - Go validate gave us almost for-free validation
+- Validation was key (go validator)
+- Deploying monitors to live servers, we had to be careful
+
 
 * Summary
 - Golang is awesome
-- Golang is not fully defined (think vendoring)
-- Golang was a great fit for us
+- Go helped us deliver this project quickly 
+- Go helped us deliver assurance to the client that a scriptling language wouldn't
+
